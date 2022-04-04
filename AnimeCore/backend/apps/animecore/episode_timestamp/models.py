@@ -13,4 +13,5 @@ class EpisodeTimestampModel(models.Model):
         return f"{self.episode_number}. {self.user}"
 
     class Meta:
-        verbose_name = "Episode Timestamp"
+        verbose_name = "Timestamp"
+        app_label = "episode"

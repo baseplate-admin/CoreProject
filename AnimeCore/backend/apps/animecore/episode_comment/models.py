@@ -13,6 +13,6 @@ class EpisodeCommentModel(models.Model):
         return f"{self.user}"
 
     class Meta:
-        verbose_name = "Episode Comment"
+        verbose_name = "Comment"
+        app_label = "episode"
         # Sort by newest first
-        ordering = ("-comment_added",)
