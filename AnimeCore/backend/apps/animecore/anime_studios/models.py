@@ -18,4 +18,5 @@ class AnimeStudioModel(models.Model):
         return f"{self.mal_id}. {self.name} ({self.type})"
 
     class Meta:
-        verbose_name = "Anime Studio"
+        verbose_name = "Studio"
+        app_label = "anime"

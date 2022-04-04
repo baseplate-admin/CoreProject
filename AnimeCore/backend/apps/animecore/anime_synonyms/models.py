@@ -10,4 +10,5 @@ class AnimeSynonymModel(models.Model):
         return f"{self.name}"
 
     class Meta:
-        verbose_name = "Anime Synonym"
+        verbose_name = "Synonym"
+        app_label = "anime"

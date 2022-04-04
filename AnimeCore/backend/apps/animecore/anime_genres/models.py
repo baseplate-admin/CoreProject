@@ -15,4 +15,5 @@ class AnimeGenreModel(models.Model):
         return f"{self.mal_id}. {self.name}"
 
     class Meta:
-        verbose_name = "Anime Genre"
+        verbose_name = "Genre"
+        app_label = "anime"
