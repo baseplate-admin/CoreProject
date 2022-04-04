@@ -48,7 +48,17 @@ INSTALLED_APPS = [
     "django_filters",
     "django_cleanup.apps.CleanupConfig",
     # Pages
-    "apps.anime",
+    "apps.animecore.anime",
+    "apps.animecore.anime_characters",
+    "apps.animecore.anime_genres",
+    "apps.animecore.anime_producers",
+    "apps.animecore.anime_recommendations",
+    "apps.animecore.anime_studios",
+    "apps.animecore.anime_synonyms",
+    "apps.animecore.anime_themes",
+    "apps.animecore.episode",
+    "apps.animecore.episode_comment",
+    # "apps.animecore.episode_timestamp"
     # Rest stuff
     "apps.user",
 ]
