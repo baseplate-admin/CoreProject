@@ -1,0 +1,15 @@
+[GLOBAL]
+pants_version = "2.11.0"
+backend_packages = [
+  "pants.backend.python",
+  "pants.backend.python.lint.black",
+  'pants.backend.experimental.python.packaging.pyoxidizer',
+]
+
+[source]
+root_patterns = [
+    "/backend/"
+]
+
+[anonymous-telemetry]
+enabled = false
