@@ -51,27 +51,25 @@ INSTALLED_APPS = [
     # Flatpages
     "django.contrib.flatpages",
     # Rest Framework
-    "rest_framework",
     # 3rd party rest framework stuff
     "corsheaders",
-    "rest_framework_simplejwt.token_blacklist",
     # 3rd party Django stuff
-    "dbbackup",  # django-dbbackup
     "ckeditor",
     "ckeditor_uploader",
-    "crispy_forms",
-    "django_filters",
     "django_cleanup.apps.CleanupConfig",
     "huey.contrib.djhuey",
     # Pages
-    "apps.anime",
+    "apps.api.v1.anime",
     # Rest stuff
     "apps.__user__",
 ]
 # Debug Toolbar Add
 # https://django-debug-toolbar.readthedocs.io/en/latest/installation.html#install-the-app
 if DEBUG:
-    INSTALLED_APPS += ("debug_toolbar",)
+    INSTALLED_APPS += (
+        "debug_toolbar",
+        "dbbackup",  # django-dbbackup
+    )
 
 
 MIDDLEWARE = [
@@ -233,26 +231,6 @@ CKEDITOR_UPLOAD_PATH = Path(MEDIA_ROOT, "upload")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Rest framework auth
-# https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation
-# https://www.django-rest-framework.org/api-guide/parsers/#setting-the-parsers
-
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-    ),
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
-    "PAGE_SIZE": 10,
-    "MAX_PAGINATE_BY": 100,
-}
-
-# Settings override
-# https://github.com/jazzband/djangorestframework-simplejwt/blob/3fc9110c7d0e5641b6eccb6dca321f44189bba01/rest_framework_simplejwt/settings.py#L12
-
-SIMPLE_JWT = {
-    "UPDATE_LAST_LOGIN": True,
-}
 
 # django-cors-headers settings
 # https://pypi.org/project/django-cors-headers/
